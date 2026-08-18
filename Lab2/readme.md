@@ -28,3 +28,23 @@ It Direct connect with client Os rather than brwoser.
   - unlink()
   - link()
   - syslink()
+
+  ## CRUD Operation
+
+  create/Insert,Read/retrieve,Update,Delete
+
+  Item (id,name,price,qty)
+
+  ## operations
+
+  1. add to cart
+  2. show cart
+  3. remove item from cart
+  4. update quantity from cart
+  5. checkout
+   NOTE:all item will be stored in hdd, so affair termination of program we can retrieve cart details.
+
+  ## Required File
+
+  1. crud.jd - it contain all the methods and entry point
+  2. Product.json - it contains the product details in array form 

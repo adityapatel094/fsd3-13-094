@@ -27,7 +27,6 @@ const main = () => {
     // setInterval(f2, 1000);
     setImmediate(f3);
     process.nextTick(f1);
-
     console.log("end");
 
     new Promise((resolve, reject) => {
