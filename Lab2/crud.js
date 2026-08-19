@@ -44,21 +44,20 @@ const main = async () => {
     switch (Number(choice)) {
       case 1:
         let data = await cin.question("enter id,name,price,qty:");
-        let p = data.split(",");
-        // console.table(p);
-        let q = p.map((item)=> item.trim());
-        // console.table(q);
-        let [id, name, price, qty]=q;
-        console.log(id, name, price, qty);
-        const product ={
-            id: Number (id),
-            name,
-            price: Number(price),
-            qty: Number(qty),
-        };
-        console.log (product);
-
-
+                let p = data.split(",");
+                console.table(p);
+                let q = p.map((item)=>item.trim());
+                let [id,name,price,qty] = q;
+                console.log(id,name,price,qty);
+                const product = {
+                    id: Number(id),
+                    name,
+                    price: Number(price),
+                    qty: Number(qty),
+                }
+                //console.log(product);
+                await addToCart(product);
+                    
         break;
       case 2:
         showCart();
