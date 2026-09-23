@@ -1,25 +1,31 @@
 import http from "http";
-import { getAllProducts } from "./products.js";
+
+import {
+  getAllProducts,
+  addProduct,
+  deleteProduct,
+  getProductById,
+  updateProduct,
+} from "./products.js";
 
 const server = http.createServer((req, res) => {
-  console.log("URL:", req.url);
-  console.log("METHOD:", req.method);
-  if (req.url === "/api/v1/products" && req.method === "GET") {
 
-    const data = getAllProducts();
+  if (req.url === "/api/v1/products" && req.method === "GET") {
 
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
 
+    const data = getAllProducts();
+
     res.end(
       JSON.stringify({
         count: data.length,
-        data: data
+        data,
       })
     );
 
   }
-  else if (req.url === "/" && req.method === "POST") {
+  else if (req.url === "/api/v1/products" && req.method === "POST") {
 
     let body = "";
 
@@ -31,28 +37,29 @@ const server = http.createServer((req, res) => {
 
       const product = JSON.parse(body);
 
-      console.log("Received product:", product);
+      const item = addProduct(product);
 
       res.statusCode = 201;
       res.setHeader("Content-Type", "application/json");
 
       res.end(
         JSON.stringify({
-          msg: "Product added",
-          product: product
+          msg: "product added",
+          data: item,
         })
       );
+
     });
 
   }
   else if (
-    req.url.startsWith("/products/") &&
+    req.url.startsWith("/api/v1/products/") &&
     req.method === "PUT"
   ) {
 
     const productID = req.url.split("/").pop();
 
-    console.log("Update Product ID:", productID);
+    console.log("Update Product id:", productID);
 
     let body = "";
 
@@ -66,36 +73,114 @@ const server = http.createServer((req, res) => {
 
       product.id = productID;
 
-      res.statusCode = 200;
+      const updatedPrd = updateProduct(productID, product);
+
       res.setHeader("Content-Type", "application/json");
 
-      res.end(
-        JSON.stringify({
-          msg: "Product updated",
-          product: product
-        })
-      );
+      if (!updatedPrd) {
+
+        res.statusCode = 404;
+
+        res.end(
+          JSON.stringify({
+            msg: `id ${productID} not found`,
+          })
+        );
+
+      } else {
+
+        res.statusCode = 200;
+
+        res.end(
+          JSON.stringify({
+            msg: "product updated",
+            updatedPrd,
+          })
+        );
+
+      }
+
     });
 
   }
-  else if (req.url === "/" && req.method === "DELETE") {
+  else if (
+    req.url.startsWith("/api/v1/products/") &&
+    req.method === "DELETE"
+  ) {
 
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
+    const pid = Number(req.url.split("/").pop());
 
-    res.end("DELETE Request");
+    res.setHeader("Content-Type", "application/json");
+
+    if (deleteProduct(pid)) {
+
+      res.statusCode = 200;
+
+      res.end(
+        JSON.stringify({
+          msg: "item deleted",
+        })
+      );
+
+    } else {
+
+      res.statusCode = 404;
+
+      res.end(
+        JSON.stringify({
+          msg: `product with id ${pid} not found`,
+        })
+      );
+
+    }
 
   }
+  else if (
+    req.url.startsWith("/api/v1/products/") &&
+    req.method === "GET"
+  ) {
+
+    const pid = Number(req.url.split("/").pop());
+
+    const product = getProductById(pid);
+
+    res.setHeader("Content-Type", "application/json");
+
+    if (product) {
+
+      res.statusCode = 200;
+
+      res.end(
+        JSON.stringify({
+          data: product,
+        })
+      );
+
+    } else {
+
+      res.statusCode = 404;
+
+      res.end(
+        JSON.stringify({
+          msg: `product with id ${pid} not found`,
+        })
+      );
+
+    }
+
+  }
+
   else {
 
     res.statusCode = 404;
     res.setHeader("Content-Type", "text/plain");
 
-    res.end("Request not found");
+    res.end("request not found");
+
   }
 
 });
 
 server.listen(5000, () => {
-  console.log("PRG6 is running on port 5000");
+  console.log("prg6 is running on port 5000");
 });
