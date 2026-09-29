@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Apex Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="courses.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/30">A</div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">Apex Academy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-1 bg-slate-800/60 p-1.5 rounded-full border border-slate-700/50">
+                    <a href="courses.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cyan-500 text-white shadow-md shadow-cyan-500/20">Courses</a>
+                    <a href="price.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Pricing</a>
+                    <a href="register.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Register</a>
+                    <a href="login.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Login</a>
+                    <a href="feedback.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/50 inline-block mb-3">Academic Excellence</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Master Your Subjects with Expert Guidance</h1>
+            <p class="text-slate-400 text-lg">Interactive live tuition classes designed for Grade 8-12 and competitive examinations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Course 1 -->
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Grade 11 - 12</span>
+                        <span class="text-yellow-400 text-sm font-medium"><i class="fa-solid fa-star mr-1"></i>4.9 (128)</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Advanced Mathematics & Calculus</h3>
+                    <p class="text-slate-400 text-sm mb-6">Master limits, derivatives, integrals, matrices, and 3D geometry through step-by-step problem-solving.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> 4 Classes per week (90 mins each)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Weekly Mock Tests & Personalized Notes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> 1-on-1 Doubt Clearing Sessions</li>
+                    </ul>
+                </div>
+                <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-700/50 flex items-center justify-between">
+                    <div><span class="text-2xl font-bold text-white">$149</span><span class="text-slate-400 text-xs">/month</span></div>
+                    <a href="register.html" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white font-medium text-sm rounded-lg transition">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Grade 10 - 12</span>
+                        <span class="text-yellow-400 text-sm font-medium"><i class="fa-solid fa-star mr-1"></i>4.8 (95)</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Physics Fundamentals & Dynamics</h3>
+                    <p class="text-slate-400 text-sm mb-6">Deep dive into Mechanics, Electromagnetism, Quantum Concepts, and practical lab experiments.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> 3 Live Sessions & Lab Simulations</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Formula Memorization Worksheets</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Previous Years Question Analysis</li>
+                    </ul>
+                </div>
+                <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-700/50 flex items-center justify-between">
+                    <div><span class="text-2xl font-bold text-white">$139</span><span class="text-slate-400 text-xs">/month</span></div>
+                    <a href="register.html" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white font-medium text-sm rounded-lg transition">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition duration-300 flex flex-col">
+                <div class="p-6 flex-grow">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Grade 9 - 12</span>
+                        <span class="text-yellow-400 text-sm font-medium"><i class="fa-solid fa-star mr-1"></i>5.0 (142)</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Organic & Physical Chemistry</h3>
+                    <p class="text-slate-400 text-sm mb-6">Comprehensive mastery of chemical bonding, reaction mechanisms, stoichiometry, and thermodynamics.</p>
+                    <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 3 Live Classes + Interactive Quizzes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Reaction Mechanism Flowcharts</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Dedicated Doubt Clearing Hub</li>
+                    </ul>
+                </div>
+                <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-700/50 flex items-center justify-between">
+                    <div><span class="text-2xl font-bold text-white">$129</span><span class="text-slate-400 text-xs">/month</span></div>
+                    <a href="register.html" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-white font-medium text-sm rounded-lg transition">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+                    <span class="text-lg font-bold text-white">Apex Academy</span>
+                </div>
+                <p class="text-slate-500 text-sm">© 2026 Apex Academy Tuition Classes. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -8,11 +8,11 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(dirname,"public","index.html"));
+    res.sendFile(path.join(dirname,"htmlpages","index.html"));
 });
 
 app.get("/about",(req,res)=>{
-    res.sendFile(path.join(dirname,"public","about.html"));
+    res.sendFile(path.join(dirname,"htmlpages","about.html"));
 });
 
 

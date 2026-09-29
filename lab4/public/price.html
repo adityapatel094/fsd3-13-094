@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Apex Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-900 text-slate-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="courses.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/30">A</div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">Apex Academy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-1 bg-slate-800/60 p-1.5 rounded-full border border-slate-700/50">
+                    <a href="courses.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Courses</a>
+                    <a href="price.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cyan-500 text-white shadow-md shadow-cyan-500/20">Pricing</a>
+                    <a href="register.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Register</a>
+                    <a href="login.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Login</a>
+                    <a href="feedback.html" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-800">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-cyan-400 font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/50 inline-block mb-3">Flexible Plans</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">Transparent Tuition Pricing</h1>
+            <p class="text-slate-400 text-lg">Choose a learning plan tailored to your academic goals. No hidden fees.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 flex flex-col hover:border-cyan-500/40 transition">
+                <h3 class="text-xl font-bold text-white mb-2">Single Subject</h3>
+                <p class="text-slate-400 text-sm mb-6">Ideal for students needing targeted assistance in one specific subject.</p>
+                <div class="mb-6"><span class="text-4xl font-extrabold text-white">$129</span><span class="text-slate-400 text-sm">/month</span></div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> 1 Selected Subject</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> 3 Live Sessions per week</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Standard Class Notes</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Monthly Evaluation Test</li>
+                    <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> 1-on-1 Doubt Clearing</li>
+                </ul>
+                <a href="register.html" class="w-full text-center py-3 rounded-xl border border-slate-600 hover:border-cyan-400 text-white font-semibold transition">Select Plan</a>
+            </div>
+
+            <!-- Standard Plan (Featured) -->
+            <div class="bg-gradient-to-b from-slate-800 to-slate-900 border-2 border-cyan-500 rounded-2xl p-8 flex flex-col relative shadow-2xl shadow-cyan-500/10">
+                <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-950 font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                <h3 class="text-xl font-bold text-white mb-2">Combo Science/Math</h3>
+                <p class="text-slate-400 text-sm mb-6">Comprehensive mastery for PCM/PCB subjects with full mentor guidance.</p>
+                <div class="mb-6"><span class="text-4xl font-extrabold text-white">$299</span><span class="text-slate-400 text-sm">/month</span></div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Any 3 Subjects Included</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Unlimited Class Recordings</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Weekly Mock Tests & Prep</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Dedicated 1-on-1 Doubt Sessions</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Parent Progress Dashboard</li>
+                </ul>
+                <a href="register.html" class="w-full text-center py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-white font-semibold transition shadow-lg shadow-cyan-500/20">Get Started</a>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 flex flex-col hover:border-cyan-500/40 transition">
+                <h3 class="text-xl font-bold text-white mb-2">All-Access Pass</h3>
+                <p class="text-slate-400 text-sm mb-6">Complete academic coverage for top rank preparation and exams.</p>
+                <div class="mb-6"><span class="text-4xl font-extrabold text-white">$449</span><span class="text-slate-400 text-sm">/month</span></div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8 flex-grow">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> All Subjects & Electives</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Daily Interactive Live Classes</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Priority 24/7 Doubt Solver App</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Personal Academic Coach</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> Exam Strategy Workshops</li>
+                </ul>
+                <a href="register.html" class="w-full text-center py-3 rounded-xl border border-slate-600 hover:border-cyan-400 text-white font-semibold transition">Select Plan</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+                    <span class="text-lg font-bold text-white">Apex Academy</span>
+                </div>
+                <p class="text-slate-500 text-sm">© 2026 Apex Academy Tuition Classes. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
