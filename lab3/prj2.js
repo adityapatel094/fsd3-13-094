@@ -1,6 +1,6 @@
 import http from 'http';
 const server = http.createServer((req,res)=>{
-    res.write("<h1>ALTAF RAJA</h1>");
+    res.write("<h1>Aditya Patel</h1>");
     res.write("<h2>hello client</h2>");
     res.end();
 });
