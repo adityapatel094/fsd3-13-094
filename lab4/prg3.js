@@ -8,7 +8,7 @@ const dirname = path.dirname(filename);
 
 app.use(express.static(path.join(dirname,"public")));
 
-app.use("/",(req,res)=>{
+app.use((req,res)=>{
     res.status(404).send("<h1>Page Not Found");
 });
 
