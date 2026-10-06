@@ -1,72 +1,146 @@
 import { products } from "./data.js";
-
-import express from 'express';
+import express from "express";
 
 const app = express();
 
-app.get("/home", (req,res)=>{
-    res.send(`<h1>home</h1>
-        <a href = '/api/products'> Browser products </a>`);
+app.get("/", (req, res) => {
+    res.send(`
+        <h1>Home Page</h1>
+        <a href="/api/products">Browse Products</a>
+    `);
 });
 
-app.get("/api/products",(req,res)=>{
-    const newProducts = products.map((product)=>{
-        const {id,name,image,price} = product;
-        return {id,name,image,price};
+// Get all products
+app.get("/api/products", (req, res) => {
+
+    const modiProducts = products.map(
+        ({ reviews, description, ...rest }) => rest
+    );
+
+    res.status(200).json({
+        count: modiProducts.length,
+        data: modiProducts
     });
-    res.json(newProducts);
 });
 
-// query string /request query be before req parameters or dynamic url
-app.get("/api/products/query",(req,res)=>{
 
-    const {search,limit,mp} = req.query;
-    console.log("search:",search);
-    console.log("limit:",limit);
+// Query String
+// Query route must be before dynamic URL /:id
+app.get("/api/products/query", (req, res) => {
 
-    let sortedProducts = [...products] // copy all products
+    const { search, limit, np } = req.query;
 
-    if(mp) {
+    console.log("search:", search);
+    console.log("limit:", limit);
+    console.log("np:", np);
+
+    // Copy all products
+    let sortedProducts = [...products];
+
+    if (np) {
         sortedProducts = sortedProducts.filter(
-            (item)=>item.price<= Number(mp)
+            (item) => item.price <= Number(np)
         );
     }
 
+    // Search products
     if (search) {
-        sortedProducts = sortedProducts.filter((item)=>
-            item.name.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()));
+        sortedProducts = sortedProducts.filter(
+            (item) =>
+                item.name
+                    .toLowerCase()
+                    .startsWith(search.toLowerCase())
+        );
     }
 
+    // Limit products
     if (limit) {
         sortedProducts = sortedProducts.slice(0, Number(limit));
     }
 
+    // No product found
     if (sortedProducts.length < 1) {
-        res
-        .status(200)
-        .json({"data":[],msg:"no products matched your search criteria"});
-    }
-    else{
-        res
-        .status(200)
-        .json({count:sortedProducts.length,data:sortedProducts});
-    }
 
+        res.status(200).json({
+            data: {},
+            msg: "No product matched your search criteria"
+        });
+
+    } else {
+
+        // Products found
+        res.status(200).json({
+            count: sortedProducts.length,
+            data: sortedProducts
+        });
+    }
 });
 
-app.get("/api/products/:productID",(req,res)=>{
-    const {productID} = req.params;
-    const singleProduct = products.find((product)=> product.id === Number(productID));
 
-    if (!singleProduct) {
-        return res.status(404).send("Product not found");
+// Get review by product ID and review ID
+app.get("/api/products/:id/review/:revid", (req, res) => {
+
+    const { id, revid } = req.params;
+
+    const product = products.find(
+        (item) => item.id == Number(id)
+    );
+
+    if (!product) {
+        res.send(`Product not found with id ${id}`);
+        return;
     }
 
-    res.json(singleProduct);
+    const review = product.reviews.find(
+        (item) => item.id == Number(revid)
+    );
+
+    if (!review) {
+        res.send(`Review not found with id ${revid}`);
+        return;
+    }
+
+    res.status(200).json({
+        productId: id,
+        reviewId: revid,
+        data: review
+    });
 });
 
-app.use((req,res)=>{
+
+// Get product by ID
+app.get("/api/products/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    const p = products.find(
+        (item) => item.id == Number(id)
+    );
+
+    if (p) {
+
+        res.status(200).json({
+            status: "found",
+            data: p
+        });
+
+    } else {
+
+        res.status(404).json({
+            status: false,
+            msg: `Product not found with id: ${id}`
+        });
+    }
+});
+
+
+// 404 Route
+app.use((req, res) => {
     res.status(404).send("Route Not Found");
 });
 
-app.listen(3333,() => console.log ("prg4 is running..."));
+
+// Start Server
+app.listen(3333, () => {
+    console.log("prg4 is running...");
+});
